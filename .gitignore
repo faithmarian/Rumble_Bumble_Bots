@@ -1,0 +1,48 @@
+# Local Codex / tooling state
+.agents/
+.codex/
+.appdata/
+.dotnet-home/
+
+# Course handouts and reference archives kept locally, not part of the team repo
+lec/
+lab/
+参考/
+project/*.pdf
+
+# Build outputs
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+*.exe
+*.dll
+*.pdb
+*.deps.json
+*.runtimeconfig.json
+*.cache
+
+# Logs and generated scratch output
+*.log
+webots_week4/map_drawer/generated/
+
+# Archives / packaged copies
+*.zip
+*.7z
+*.rar
+
+# OS / editor metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Secrets and local environment files
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*secret*
+*credentials*

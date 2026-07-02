@@ -1,0 +1,33 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "../protos/Figure2Maze.proto"
+EXTERNPROTO "../protos/MTRN3100KitMouse.proto"
+
+WorldInfo {
+  info [
+    "MTRN3100 Micromouse Figure 2 maze"
+    "Autonomous mapping demo: robot explores using lidar, builds a grid map, returns to start, then runs the shortest path"
+  ]
+  title "MTRN3100 Figure 2 Micromouse Autonomous Mapping Demo"
+  basicTimeStep 32
+}
+Viewpoint {
+  orientation -0.585692 0.594732 0.550638 2.13244
+  position 0.08 0.30 2.25
+}
+Background {
+  skyColor [
+    0.55 0.58 0.62
+  ]
+}
+DirectionalLight {
+  direction -0.4 -0.6 -1
+  intensity 1.8
+}
+Figure2Maze {
+}
+MTRN3100KitMouse {
+  translation -0.72 0.36 0
+  rotation 0 0 1 0
+  controller "autonomous_mapper"
+}

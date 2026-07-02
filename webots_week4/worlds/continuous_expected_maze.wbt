@@ -1,0 +1,51 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "../protos/ContinuousExpectedMaze.proto"
+EXTERNPROTO "../protos/MTRN3100KitMouse.proto"
+
+WorldInfo {
+  info [
+    "MTRN3100 continuous planning expected maze"
+    "Generated from reference maze_img.jpg with 180 mm grid, 150 mm walls, and 100 mm cylindrical obstacles"
+  ]
+  title "MTRN3100 Continuous Expected Maze"
+  basicTimeStep 32
+  contactProperties [
+    ContactProperties {
+      material1 "drive_wheel"
+      material2 "maze_floor"
+      coulombFriction [ 1.0 ]
+      bounce 0
+    }
+    ContactProperties {
+      material1 "caster_ball"
+      material2 "maze_floor"
+      coulombFriction [ 0.2 ]
+      bounce 0
+    }
+    ContactProperties {
+      material1 "chassis"
+      material2 "maze_floor"
+      coulombFriction [ 0.6 ]
+      bounce 0
+    }
+  ]
+}
+Viewpoint {
+  orientation 0 1 0 0
+  position 0 0 2.35
+}
+Background {
+  skyColor [ 0.55 0.58 0.62 ]
+}
+DirectionalLight {
+  direction -0.4 -0.6 -1
+  intensity 1.8
+}
+ContinuousExpectedMaze {
+}
+MTRN3100KitMouse {
+  translation 0.54000 0.36000 0
+  rotation 0 0 1 -1.5708
+  name "MTRN3100 kit mouse continuous"
+}

@@ -1,0 +1,595 @@
+#VRML_SIM R2025a utf8
+
+PROTO Figure2Maze [
+  field SFString name "Figure 2 maze"
+] {
+  Solid {
+    name IS name
+    children [
+      Solid {
+        translation 0 0 -0.002
+        contactMaterial "maze_floor"
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.35 0.28 0.24
+              roughness 0.85
+              metalness 0
+            }
+            geometry Box {
+              size 1.82 1.10 0.004
+            }
+          }
+        ]
+        name "floor"
+        boundingObject Box {
+          size 1.82 1.10 0.004
+        }
+      }
+    Solid {
+      translation -0.72 0.36 0.003
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.05 0.75 0.12
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.11 0.11 0.004
+          }
+        }
+      ]
+      name "S marker cell 0 0"
+    }
+    Solid {
+      translation 0.54 -0.36 0.003
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.85 0.05 0.05
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.11 0.11 0.004
+          }
+        }
+      ]
+      name "G marker cell 4 7"
+    }
+    Solid {
+      translation 0 0.45 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 1.63 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 01"
+      boundingObject Box {
+        size 1.63 0.01 0.15
+      }
+    }
+    Solid {
+      translation -0.72 0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 02"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation -0.18 0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 03"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation 0.18 0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 04"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation 0.36 0.09 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 05"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation -0.54 -0.09 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 06"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation 0 -0.09 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.55 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 07"
+      boundingObject Box {
+        size 0.55 0.01 0.15
+      }
+    }
+    Solid {
+      translation 0.72 -0.09 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 08"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation -0.72 -0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 09"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation 0.54 -0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 10"
+      boundingObject Box {
+        size 0.19 0.01 0.15
+      }
+    }
+    Solid {
+      translation 0 -0.45 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 1.63 0.01 0.15
+          }
+        }
+      ]
+      name "fig2 h 11"
+      boundingObject Box {
+        size 1.63 0.01 0.15
+      }
+    }
+    Solid {
+      translation -0.81 0 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.91 0.15
+          }
+        }
+      ]
+      name "fig2 v 01"
+      boundingObject Box {
+        size 0.01 0.91 0.15
+      }
+    }
+    Solid {
+      translation -0.63 -0.09 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.37 0.15
+          }
+        }
+      ]
+      name "fig2 v 02"
+      boundingObject Box {
+        size 0.01 0.37 0.15
+      }
+    }
+    Solid {
+      translation -0.45 0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.37 0.15
+          }
+        }
+      ]
+      name "fig2 v 03"
+      boundingObject Box {
+        size 0.01 0.37 0.15
+      }
+    }
+    Solid {
+      translation -0.45 -0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 04"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation -0.27 0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 05"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation -0.27 -0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 06"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation -0.09 0.09 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.37 0.15
+          }
+        }
+      ]
+      name "fig2 v 07"
+      boundingObject Box {
+        size 0.01 0.37 0.15
+      }
+    }
+    Solid {
+      translation -0.09 -0.36 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 08"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.09 0.36 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 09"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.09 -0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 10"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.27 0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 11"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.27 -0.36 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 12"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.45 0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 13"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.45 -0.18 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 14"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.63 0.27 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.37 0.15
+          }
+        }
+      ]
+      name "fig2 v 15"
+      boundingObject Box {
+        size 0.01 0.37 0.15
+      }
+    }
+    Solid {
+      translation 0.63 -0.36 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.19 0.15
+          }
+        }
+      ]
+      name "fig2 v 16"
+      boundingObject Box {
+        size 0.01 0.19 0.15
+      }
+    }
+    Solid {
+      translation 0.81 0 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.06 0.06 0.06
+            roughness 0.82
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.91 0.15
+          }
+        }
+      ]
+      name "fig2 v 17"
+      boundingObject Box {
+        size 0.01 0.91 0.15
+      }
+    }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+# drawn_micromouse_map
+GRID 9 9
+GRID_POINTS 10 10
+CELL_MM 180
+WALL_THICKNESS_MM 12
+WALL_HEIGHT_MM 150
+CYLINDER_DIAMETER_MM 100
+START 8 3
+GOAL 2 7
+WALL H row=0 col=2..7
+WALL H row=1 col=1..3
+WALL H row=1 col=5..6
+WALL H row=1 col=7..8
+WALL H row=2 col=0..1
+WALL H row=2 col=2..4
+WALL H row=2 col=6..7
+WALL H row=2 col=8..9
+WALL H row=3 col=7..8
+WALL H row=4 col=2..3
+WALL H row=4 col=4..5
+WALL H row=5 col=1..2
+WALL H row=6 col=2..4
+WALL H row=6 col=5..7
+WALL H row=7 col=0..1
+WALL H row=7 col=2..3
+WALL H row=7 col=6..7
+WALL H row=7 col=8..9
+WALL H row=8 col=1..2
+WALL H row=8 col=5..6
+WALL H row=8 col=7..8
+WALL H row=9 col=2..7
+WALL V col=0 row=2..7
+WALL V col=1 row=1..2
+WALL V col=1 row=3..4
+WALL V col=1 row=5..6
+WALL V col=1 row=7..8
+WALL V col=2 row=0..1
+WALL V col=2 row=2..3
+WALL V col=2 row=6..7
+WALL V col=2 row=8..9
+WALL V col=3 row=3..6
+WALL V col=4 row=6..9
+WALL V col=5 row=2..3
+WALL V col=5 row=4..7
+WALL V col=5 row=8..9
+WALL V col=6 row=2..5
+WALL V col=6 row=7..8
+WALL V col=7 row=0..1
+WALL V col=7 row=3..4
+WALL V col=7 row=5..6
+WALL V col=7 row=8..9
+WALL V col=8 row=1..2
+WALL V col=8 row=5..6
+WALL V col=8 row=7..8
+WALL V col=9 row=2..7
+STRING H0,2-7;H1,1-3;H1,5-6;H1,7-8;H2,0-1;H2,2-4;H2,6-7;H2,8-9;H3,7-8;H4,2-3;H4,4-5;H5,1-2;H6,2-4;H6,5-7;H7,0-1;H7,2-3;H7,6-7;H7,8-9;H8,1-2;H8,5-6;H8,7-8;H9,2-7;V0,2-7;V1,1-2;V1,3-4;V1,5-6;V1,7-8;V2,0-1;V2,2-3;V2,6-7;V2,8-9;V3,3-6;V4,6-9;V5,2-3;V5,4-7;V5,8-9;V6,2-5;V6,7-8;V7,0-1;V7,3-4;V7,5-6;V7,8-9;V8,1-2;V8,5-6;V8,7-8;V9,2-7

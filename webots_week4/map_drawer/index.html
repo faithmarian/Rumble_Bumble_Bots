@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTRN3100 Map Drawer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="toolbar" aria-label="map tools">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span>MTRN3100 Map Drawer</span>
+      </div>
+      <div class="tool-group" role="group" aria-label="tools">
+        <button class="tool active" data-mode="draw" title="Draw wall">Wall</button>
+        <button class="tool" data-mode="erase" title="Erase nearest item">Erase</button>
+        <button class="tool" data-mode="start" title="Set start">Start</button>
+        <button class="tool" data-mode="goal" title="Set goal">Goal</button>
+      </div>
+      <div class="tool-group" role="group" aria-label="commands">
+        <button id="undoBtn" title="Undo">Undo</button>
+        <button id="clearBtn" title="Clear map">Clear</button>
+        <button id="exportBtn" title="Generate files">Generate</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="canvas-panel">
+        <canvas id="mazeCanvas" width="900" height="900"></canvas>
+        <div id="status" class="status">Ready</div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="metric-grid">
+          <div><span id="wallCount">0</span><small>walls</small></div>
+          <div><span id="cylinderCount">0</span><small>cylinders</small></div>
+          <div><span id="dotCount">0</span><small>dots</small></div>
+        </div>
+
+        <label class="field">
+          <span>Map name</span>
+          <input id="mapName" value="drawn_micromouse_map" spellcheck="false">
+        </label>
+
+        <div class="grid-config">
+          <label class="field">
+            <span>Cell rows first</span>
+            <input id="gridRows" type="number" min="2" max="30" step="1" value="9">
+          </label>
+          <label class="field">
+            <span>Cell columns second</span>
+            <input id="gridCols" type="number" min="2" max="30" step="1" value="9">
+          </label>
+          <button id="applyGridBtn" title="Apply row and column count">Apply grid</button>
+        </div>
+
+        <label class="field">
+          <span>Wall thickness mm</span>
+          <input id="wallThickness" type="number" min="6" max="40" step="1" value="12">
+        </label>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="abstractText">Abstract</button>
+          <button class="tab" data-tab="wbtText">WBT</button>
+          <button class="tab" data-tab="protoText">PROTO</button>
+        </div>
+
+        <textarea id="abstractText" class="output active" spellcheck="false"></textarea>
+        <textarea id="wbtText" class="output" spellcheck="false"></textarea>
+        <textarea id="protoText" class="output" spellcheck="false"></textarea>
+
+        <div class="save-row">
+          <button id="copyBtn">Copy</button>
+          <button id="downloadBtn">Download</button>
+          <button id="saveBtn">Save to generated</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

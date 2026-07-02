@@ -1,0 +1,60 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "../protos/Figure2Maze.proto"
+EXTERNPROTO "../protos/MTRN3100KitMouse.proto"
+
+WorldInfo {
+  info [
+    "MTRN3100 Micromouse Figure 2 maze"
+    "Drive demo: visual kit robot follows the generated f/l/r path"
+  ]
+  title "MTRN3100 Figure 2 Micromouse Maze Drive Demo"
+  basicTimeStep 32
+  contactProperties [
+    ContactProperties {
+      material1 "drive_wheel"
+      material2 "maze_floor"
+      coulombFriction [
+        1.0
+      ]
+      bounce 0
+    }
+    ContactProperties {
+      material1 "caster_ball"
+      material2 "maze_floor"
+      coulombFriction [
+        0.2
+      ]
+      bounce 0
+    }
+    ContactProperties {
+      material1 "chassis"
+      material2 "maze_floor"
+      coulombFriction [
+        0.6
+      ]
+      bounce 0
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.585692 0.594732 0.550638 2.13244
+  position 0.08 0.30 2.25
+}
+Background {
+  skyColor [
+    0.55 0.58 0.62
+  ]
+}
+DirectionalLight {
+  direction -0.4 -0.6 -1
+  intensity 1.8
+}
+Figure2Maze {
+}
+MTRN3100KitMouse {
+  translation -0.72 0.36 0
+  rotation 0 0 1 0
+  controller "micromouse_maze_drive"
+  customData "path=f r f2 l f l f2 r f2 r f l f r f l f r f2 l f"
+}

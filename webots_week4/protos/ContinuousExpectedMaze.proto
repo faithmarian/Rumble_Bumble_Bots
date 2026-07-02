@@ -1,0 +1,722 @@
+#VRML_SIM R2025a utf8
+
+PROTO ContinuousExpectedMaze [
+  field SFString name "continuous expected maze"
+] {
+  Solid {
+    name IS name
+    children [
+      DEF BOARD Solid {
+        translation 0 0 -0.002
+        contactMaterial "maze_floor"
+        children [
+          Shape {
+            appearance DEF BOARD_APP PBRAppearance {
+              baseColor 0.015 0.015 0.015
+              roughness 0.86
+              metalness 0
+            }
+            geometry IndexedFaceSet {
+              coord Coordinate {
+                point [
+                  -0.46000 0.78698 0.00000
+                  -0.79500 0.45209 0.00000
+                  -0.79500 -0.46645 0.00000
+                  -0.45500 -0.79176 0.00000
+                  0.48000 -0.79176 0.00000
+                  0.82500 -0.43296 0.00000
+                  0.82500 0.43774 0.00000
+                  0.46000 0.78698 0.00000
+                ]
+              }
+              coordIndex [ 0 1 2 3 4 5 6 7 -1 ]
+            }
+          }
+        ]
+        boundingObject Box { size 1.62 1.62 0.004 }
+      }
+      DEF START_MARKER Solid {
+        translation 0.54000 0.36000 0.003
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.05 0.75 0.12 roughness 0.8 metalness 0 }
+          geometry Box { size 0.10 0.10 0.004 }
+        } ]
+        name "continuous start row 2 col 7"
+      }
+      DEF GOAL_MARKER Solid {
+        translation 0.18000 -0.54000 0.003
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.85 0.05 0.05 roughness 0.8 metalness 0 }
+          geometry Box { size 0.10 0.10 0.004 }
+        } ]
+        name "continuous goal row 7 col 5"
+      }
+      Solid {
+        translation -0.76750 -0.41143 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 0.04749 0.15000 }
+        } ]
+        name "continuous wall 001"
+        boundingObject Box { size 0.01400 0.04749 0.15000 }
+      }
+      Solid {
+        translation 0.45250 -0.17701 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 1.23393 0.15000 }
+        } ]
+        name "continuous wall 002"
+        boundingObject Box { size 0.01400 1.23393 0.15000 }
+      }
+      Solid {
+        translation 0.40250 -0.08133 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 0.21971 0.15000 }
+        } ]
+        name "continuous wall 003"
+        boundingObject Box { size 0.01400 0.21971 0.15000 }
+      }
+      Solid {
+        translation 0.77875 -0.00718 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 0.89427 0.15000 }
+        } ]
+        name "continuous wall 004"
+        boundingObject Box { size 0.01400 0.89427 0.15000 }
+      }
+      Solid {
+        translation -0.50250 0.00000 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 0.53546 0.15000 }
+        } ]
+        name "continuous wall 005"
+        boundingObject Box { size 0.01400 0.53546 0.15000 }
+      }
+      Solid {
+        translation -0.77000 0.00239 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 0.19579 0.15000 }
+        } ]
+        name "continuous wall 006"
+        boundingObject Box { size 0.01400 0.19579 0.15000 }
+      }
+      Solid {
+        translation -0.41250 0.33967 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.72 metalness 0 }
+          geometry Box { size 0.01400 0.21015 0.15000 }
+        } ]
+        name "continuous wall 007"
+        boundingObject Box { size 0.01400 0.21015 0.15000 }
+      }
+      Solid {
+        translation 0.13839 0.58526 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.005 0.005 0.005 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.150 radius 0.050 subdivision 36 }
+        } ]
+        name "continuous cylindrical obstacle 1"
+        boundingObject Cylinder { height 0.150 radius 0.050 subdivision 36 }
+      }
+      Solid {
+        translation 0.30212 0.39393 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.005 0.005 0.005 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.150 radius 0.050 subdivision 36 }
+        } ]
+        name "continuous cylindrical obstacle 2"
+        boundingObject Cylinder { height 0.150 radius 0.050 subdivision 36 }
+      }
+      Solid {
+        translation -0.29062 0.30528 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.005 0.005 0.005 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.150 radius 0.050 subdivision 36 }
+        } ]
+        name "continuous cylindrical obstacle 3"
+        boundingObject Cylinder { height 0.150 radius 0.050 subdivision 36 }
+      }
+      Solid {
+        translation -0.05034 0.14580 0.07500
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.005 0.005 0.005 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.150 radius 0.050 subdivision 36 }
+        } ]
+        name "continuous cylindrical obstacle 4"
+        boundingObject Cylinder { height 0.150 radius 0.050 subdivision 36 }
+      }
+      Pose {
+        translation -0.72000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 0.00000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 -0.18000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 -0.36000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 -0.54000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.72000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.54000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.36000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation -0.18000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.00000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.18000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.36000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.54000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+      Pose {
+        translation 0.72000 -0.72000 0.004
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.18 0.18 0.18 roughness 0.9 metalness 0 }
+          geometry Cylinder { height 0.001 radius 0.004 subdivision 12 }
+        } ]
+      }
+    ]
+  }
+}

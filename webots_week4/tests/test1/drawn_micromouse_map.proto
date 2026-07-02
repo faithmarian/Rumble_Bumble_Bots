@@ -1,0 +1,1351 @@
+#VRML_SIM R2025a utf8
+
+PROTO DrawnMicromouseMap [
+  field SFString name "DrawnMicromouseMap"
+] {
+  Solid {
+    name IS name
+    children [
+      Solid {
+        translation 0.0 0.0 -0.0020
+        contactMaterial "maze_floor"
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 0.76 metalness 0 }
+          geometry Box { size 1.830 1.830 0.0040 }
+        } ]
+        name "black floor"
+        boundingObject Box { size 1.830 1.830 0.0040 }
+      }
+      Solid {
+        translation -0.810 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 0 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 1 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 2 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 3 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 4 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 -0.090 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 5 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 -0.270 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 6 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 -0.450 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 7 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.810 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 0"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.810 -0.630 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 8 9"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.630 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 1"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.450 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 2"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.270 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 3"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation -0.090 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 4"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.090 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 5"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.270 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 6"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.450 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 7"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.630 -0.810 0.0040
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.32 0.32 0.32 roughness 0.78 metalness 0 }
+          geometry Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+        } ]
+        name "grid dot 9 8"
+        boundingObject Cylinder { height 0.0010 radius 0.0040 subdivision 36 }
+      }
+      Solid {
+        translation 0.0 0.810 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.9120 0.0120 0.150 }
+        } ]
+        name "white wall 001"
+        boundingObject Box { size 0.9120 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.450 0.630 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.3720 0.0120 0.150 }
+        } ]
+        name "white wall 002"
+        boundingObject Box { size 0.3720 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.180 0.630 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 003"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.540 0.630 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 004"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.720 0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 005"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.270 0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.3720 0.0120 0.150 }
+        } ]
+        name "white wall 006"
+        boundingObject Box { size 0.3720 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.360 0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 007"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.720 0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 008"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.540 0.270 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 009"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.360 0.090 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 010"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.0 0.090 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 011"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.540 -0.090 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 012"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.270 -0.270 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.3720 0.0120 0.150 }
+        } ]
+        name "white wall 013"
+        boundingObject Box { size 0.3720 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.270 -0.270 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.3720 0.0120 0.150 }
+        } ]
+        name "white wall 014"
+        boundingObject Box { size 0.3720 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.720 -0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 015"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.360 -0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 016"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.360 -0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 017"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.720 -0.450 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 018"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.540 -0.630 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 019"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.180 -0.630 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 020"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.540 -0.630 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.1920 0.0120 0.150 }
+        } ]
+        name "white wall 021"
+        boundingObject Box { size 0.1920 0.0120 0.150 }
+      }
+      Solid {
+        translation 0.0 -0.810 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.9120 0.0120 0.150 }
+        } ]
+        name "white wall 022"
+        boundingObject Box { size 0.9120 0.0120 0.150 }
+      }
+      Solid {
+        translation -0.810 0.0 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.9120 0.150 }
+        } ]
+        name "white wall 023"
+        boundingObject Box { size 0.0120 0.9120 0.150 }
+      }
+      Solid {
+        translation -0.630 0.540 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 024"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.630 0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 025"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.630 -0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 026"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.630 -0.540 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 027"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.450 0.720 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 028"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.450 0.360 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 029"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.450 -0.360 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 030"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.450 -0.720 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 031"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation -0.270 0.0 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.5520 0.150 }
+        } ]
+        name "white wall 032"
+        boundingObject Box { size 0.0120 0.5520 0.150 }
+      }
+      Solid {
+        translation -0.090 -0.540 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.5520 0.150 }
+        } ]
+        name "white wall 033"
+        boundingObject Box { size 0.0120 0.5520 0.150 }
+      }
+      Solid {
+        translation 0.090 0.360 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 034"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.090 -0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.5520 0.150 }
+        } ]
+        name "white wall 035"
+        boundingObject Box { size 0.0120 0.5520 0.150 }
+      }
+      Solid {
+        translation 0.090 -0.720 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 036"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.270 0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.5520 0.150 }
+        } ]
+        name "white wall 037"
+        boundingObject Box { size 0.0120 0.5520 0.150 }
+      }
+      Solid {
+        translation 0.270 -0.540 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 038"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.450 0.720 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 039"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.450 0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 040"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.450 -0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 041"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.450 -0.720 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 042"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.630 0.540 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 043"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.630 -0.180 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 044"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.630 -0.540 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.1920 0.150 }
+        } ]
+        name "white wall 045"
+        boundingObject Box { size 0.0120 0.1920 0.150 }
+      }
+      Solid {
+        translation 0.810 0.0 0.0750
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.96 0.95 0.90 roughness 0.76 metalness 0 }
+          geometry Box { size 0.0120 0.9120 0.150 }
+        } ]
+        name "white wall 046"
+        boundingObject Box { size 0.0120 0.9120 0.150 }
+      }
+      Pose {
+        translation -0.180 -0.720 0.0030
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.05 0.75 0.12 roughness 0.76 metalness 0 }
+          geometry Box { size 0.10 0.10 0.0040 }
+        } ]
+        # start marker
+      }
+      Pose {
+        translation 0.540 0.360 0.0030
+        children [ Shape {
+          appearance PBRAppearance { baseColor 0.85 0.05 0.05 roughness 0.76 metalness 0 }
+          geometry Box { size 0.10 0.10 0.0040 }
+        } ]
+        # goal marker
+      }
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+#VRML_SIM R2025a utf8
+
+PROTO MTRN3100KitMouse [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "MTRN3100 kit mouse"
+  field SFString controller "<none>"
+  field MFString controllerArgs []
+  field SFString customData ""
+] {
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    contactMaterial "chassis"
+    model "compact MTRN3100 micromouse sensor-layout model"
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    children [
+      Pose {
+        translation -0.018 0 0.017
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.03 0.30 0.13
+              roughness 0.75
+              metalness 0
+            }
+            geometry Box {
+              size 0.070 0.055 0.005
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.007 0 0.026
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.05 0.05 0.05
+              roughness 0.55
+              metalness 0
+            }
+            geometry DEF LIDAR_BOX Box {
+              size 0.010 0.008 0.006
+            }
+          }
+        ]
+      }
+      DistanceSensor {
+        translation 0.007 0 0.026
+        rotation 0 0 1 0
+        name "front lidar"
+        lookupTable [
+          0 0 0
+          0.30 0.30 0
+        ]
+        type "infra-red"
+        numberOfRays 3
+        aperture 0.10
+      }
+      Pose {
+        translation -0.018 0.022 0.026
+        rotation 0 0 1 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.05 0.05 0.05
+              roughness 0.55
+              metalness 0
+            }
+            geometry USE LIDAR_BOX
+          }
+        ]
+      }
+      DistanceSensor {
+        translation -0.018 0.022 0.026
+        rotation 0 0 1 1.5708
+        name "left lidar"
+        lookupTable [
+          0 0 0
+          0.30 0.30 0
+        ]
+        type "infra-red"
+        numberOfRays 3
+        aperture 0.10
+      }
+      Pose {
+        translation -0.018 -0.022 0.026
+        rotation 0 0 1 -1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.05 0.05 0.05
+              roughness 0.55
+              metalness 0
+            }
+            geometry USE LIDAR_BOX
+          }
+        ]
+      }
+      DistanceSensor {
+        translation -0.018 -0.022 0.026
+        rotation 0 0 1 -1.5708
+        name "right lidar"
+        lookupTable [
+          0 0 0
+          0.30 0.30 0
+        ]
+        type "infra-red"
+        numberOfRays 3
+        aperture 0.10
+      }
+      Pose {
+        translation -0.032 0 0.026
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.36 0.36 0.38
+              roughness 0.55
+              metalness 0
+            }
+            geometry Box {
+              size 0.016 0.012 0.006
+            }
+          }
+        ]
+      }
+      InertialUnit {
+        name "imu"
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0 1 0
+          anchor 0 0.032 0.016
+        }
+        device [
+          RotationalMotor {
+            name "left wheel motor"
+            maxVelocity 12
+          }
+          PositionSensor {
+            name "left wheel sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0 0.032 0.016
+          rotation 1 0 0 1.5708
+          contactMaterial "drive_wheel"
+          children [
+            DEF KIT_WHEEL Shape {
+              appearance PBRAppearance {
+                baseColor 0.88 0.88 0.86
+                roughness 0.9
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.007
+                radius 0.016
+                subdivision 32
+              }
+            }
+          ]
+          name "left drive wheel"
+          boundingObject USE KIT_WHEEL
+          physics Physics {
+            density -1
+            mass 0.02
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0 1 0
+          anchor 0 -0.032 0.016
+        }
+        device [
+          RotationalMotor {
+            name "right wheel motor"
+            maxVelocity 12
+          }
+          PositionSensor {
+            name "right wheel sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0 -0.032 0.016
+          rotation 1 0 0 1.5708
+          contactMaterial "drive_wheel"
+          children [
+            USE KIT_WHEEL
+          ]
+          name "right drive wheel"
+          boundingObject USE KIT_WHEEL
+          physics Physics {
+            density -1
+            mass 0.02
+          }
+        }
+      }
+      BallJoint {
+        jointParameters BallJointParameters {
+          anchor -0.048 0 0.006
+        }
+        endPoint Solid {
+          translation -0.048 0 0.006
+          contactMaterial "caster_ball"
+          children [
+            DEF CASTER_BALL Shape {
+              appearance PBRAppearance {
+                baseColor 0.80 0.80 0.78
+                roughness 0.35
+                metalness 0
+              }
+              geometry Sphere {
+                radius 0.006
+                subdivision 3
+              }
+            }
+          ]
+          name "rear caster ball"
+          boundingObject USE CASTER_BALL
+          physics Physics {
+            density -1
+            mass 0.004
+          }
+        }
+      }
+    ]
+    boundingObject Group {
+      children [
+        Pose {
+          translation -0.018 0 0.017
+          children [
+            Box {
+              size 0.070 0.055 0.005
+            }
+          ]
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 0.12
+      centerOfMass [
+        0 0 0.016
+      ]
+    }
+  }
+}

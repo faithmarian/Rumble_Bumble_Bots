@@ -1,0 +1,28 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "DrawnMicromouseMap.proto"
+EXTERNPROTO "../../protos/MTRN3100KitMouse.proto"
+
+WorldInfo {
+  title "Drawn MTRN3100 Micromouse Map"
+  basicTimeStep 32
+  contactProperties [
+    ContactProperties { material1 "drive_wheel" material2 "maze_floor" coulombFriction [ 1.0 ] bounce 0 }
+    ContactProperties { material1 "caster_ball" material2 "maze_floor" coulombFriction [ 0.2 ] bounce 0 }
+    ContactProperties { material1 "chassis" material2 "maze_floor" coulombFriction [ 0.6 ] bounce 0 }
+  ]
+}
+Viewpoint {
+  orientation 0 1 0 0
+  position 0 0 2.35
+}
+Background { skyColor [ 0.55 0.58 0.62 ] }
+DirectionalLight { direction -0.4 -0.6 -1 intensity 1.8 }
+DrawnMicromouseMap { name "drawn_micromouse_map" }
+MTRN3100KitMouse {
+  translation -0.180 -0.720 0
+  rotation 0 0 1 0
+  name "MTRN3100 kit mouse drawn map"
+  controller "autonomous_maze_runner"
+  customData "GRID 9 9; START 8 3; GOAL 2 7; HEADING E"
+}
