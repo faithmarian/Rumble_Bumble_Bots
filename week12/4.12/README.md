@@ -51,11 +51,9 @@ The sketch follows the same rules as the Task 4.3 mapping build:
 
 - **Consecutive `f` commands run as one straight.** `fff` is a single 540 mm run
   instead of three stop-start cells, which is where most of the lap time is won.
-- **The range sensors free-run** and one is read per control cycle, front twice
-  as often as the sides. The display refreshes a single row per pass. Together
-  these keep the loop near 10 ms instead of the 45 ms that blocking reads and a
-  full screen refresh used to cost; wall following is only as good as the loop
-  feeding it.
+- **One range sensor is read per control tick** while driving. Three blocking
+  reads per loop stretched the control period far too much at speed, and wall
+  following is only as good as the loop feeding it.
 - **Absolute headings allow a loose turn tolerance**, and turn tolerance is a
   large part of the lap time.
 - A wall reached at the nominal gap is an absolute distance fix, so encoder slip
@@ -66,24 +64,30 @@ The sketch follows the same rules as the Task 4.3 mapping build:
 Raise `DRIVE_SPEED_MAX` first, and only that.
 
 ```
- 42  the old one-cell-at-a-time value, very safe
- 85  current setting, roughly double the speed
-110  quick, needs a straight track and a charged battery
+100  validated on the board by the 4.3 build
+120  current setting, straights here are chained and longer
+140  quick, needs a charged battery - watch for weaving
 ```
 
-If the robot weaves down a corridor or clips a post, drop it back 10 and re-run
-before touching any gain. Watch the serial output after each run:
+`TURN_RATE_MAX` is the same idea for corners, currently 110 deg/s against the
+100 proven on 4.3. If the robot weaves down a corridor or clips a post, put both
+back to 100 before touching any gain.
+
+`ENCODER_DISTANCE_SCALE` is 1.02, measured on this chassis. If cells land
+consistently short or long, this is the number to change, not the cell size.
+
+Watch the serial output after each run:
 
 - `Route finished in N s` is the lap time.
-- `Turn timeouts: 0` is what you want. Several of them means `TURN_PWM_MAX` is
-  too low for the tyres and surface.
-- `A run stopped early` means a straight ended before three quarters of a cell,
+- `Turn retries: 0` is what you want. Retries mean a turn timed out and had to
+  be repeated, which costs about half a second each.
+- `A run stopped short` means a straight ended more than 45 mm before its target,
   so something was in the way or the path is wrong.
 
-Safety nets, none of which should ever trigger on a good run: turns give up
-after `TURN_TIMEOUT_MS` and carry on, straights give up after
-`RUN_TIMEOUT_BASE_MS` plus `RUN_TIMEOUT_PER_CELL_MS` per cell, a stalled wheel
-gets a PWM boost until it turns, and the front-wall stop is only accepted within
+Safety nets, none of which should trigger on a good run: turns give up after
+`SETTLE_TIMEOUT_MS` and are retried once, straights give up after
+`DRIVE_TIMEOUT_MS` per cell, both stall watchdogs back off and resume up to
+`STALL_RECOVERY_MAX` times, and the front-wall stop is only accepted within
 `FRONT_WALL_MAX_MM` of the end of a run so a stray reading cannot end a long
 straight early.
 
