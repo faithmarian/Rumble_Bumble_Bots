@@ -1,7 +1,29 @@
-# Week 12 Task 4.1.2 - Maze Completion (race build)
+# Week 12 Task 4.1.2 - Maze Completion
 
-The Arduino sketch is in `week12_4_1_2_maze_completion` and contains all robot
-control code in one `.ino` file.
+**The race build is `week12_4_1_2_maze_completion_pid_migrated/`.** It carries
+the trajectory-tracking motion core proven on the board in the Task 4.3 build,
+including every field fix from its eight tuning rounds.
+`week12_4_1_2_maze_completion/` is the original one-cell-at-a-time reference and
+is kept unchanged.
+
+## What the race build inherits from 4.3
+
+- Trapezoidal profile with velocity feedforward, not a PID chasing a raw error.
+- D terms read `getGyroZ()` directly. Differentiating the angle over an
+  irregular loop period was the main source of the constant buzzing.
+- Turns coast inside a 2 degree zone instead of chasing the last degree through
+  the static-friction kick, which caused kick-overshoot-reverse-kick buzzing.
+- One-layer micromouse correction, **scaled by the forward drive**. With forward
+  at zero the per-wheel deadband used to turn any differential into a hard
+  in-place twitch, which is what made the robot pivot and then hit a wall.
+- Every range reading needs two consecutive samples that agree, so a single
+  spike cannot collapse the cruise speed.
+- Wall-edge odometry sync: a side wall appearing or ending means the robot is at
+  a cell boundary, so the measured distance is snapped towards it. This stops
+  error accumulating into an off-by-one-cell turn.
+- Stall watchdogs in both the straight and the turn: back off and resume.
+- Continuous static-to-kinetic deadband blend. Switching at a threshold injected
+  an 8 PWM square wave.
 
 ## Marking workflow
 
@@ -41,7 +63,7 @@ The sketch follows the same rules as the Task 4.3 mapping build:
 
 ## Tuning for the race
 
-Raise `RUN_PWM_MAX` first, and only that. Everything else scales with it.
+Raise `DRIVE_SPEED_MAX` first, and only that.
 
 ```
  42  the old one-cell-at-a-time value, very safe
