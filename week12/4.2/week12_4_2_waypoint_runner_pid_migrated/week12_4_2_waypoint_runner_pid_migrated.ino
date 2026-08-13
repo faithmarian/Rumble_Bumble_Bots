@@ -60,49 +60,64 @@ const float WALL_GAP_MM = (CELL_MM - ROBOT_SIZE_MM) / 2.0f;
 const float CORRIDOR_SUM_MM = 2.0f * WALL_GAP_MM;
 const float WHEEL_DIAMETER_MM = 44.0f;
 const float ENCODER_COUNTS_PER_REV = 356.72f;
-// Calibration: the old conversion made a commanded distance run about 10% long.
-const float ENCODER_DISTANCE_SCALE = 1.10f;
+// Field measured on this chassis by the 4.3 build: 1.10 left cells about 8%
+// short. Same robot, same wheels, so the same number applies here.
+const float ENCODER_DISTANCE_SCALE = 1.02f;
 const float MM_PER_COUNT = (PI * WHEEL_DIAMETER_MM) / ENCODER_COUNTS_PER_REV
                            * ENCODER_DISTANCE_SCALE;
 const float DISTANCE_TOLERANCE_MM = 1.0f;
 
 // ---------------------- Trajectory PID ----------------------
-// These are deliberately softer than pid_validation.ino: braking starts
-// earlier, the integral is tightly bounded, and rate damping is stronger.
-const float TURN_RATE_MAX = 48.0f;
-const float TURN_ACCEL = 82.0f;
-const float TURN_RATE_MIN = 5.0f;
-const float TURN_KV = 0.20f;
-const float TURN_KP = 0.88f;
+// Matched to the values the Task 4.3 build proved on this chassis. The
+// course asks for arbitrary angles (T8, T37, T56) and arbitrary distances,
+// so the creep speeds matter more here than on the grid: a small turn is
+// almost entirely creep. Both sit above the stick-slip threshold on
+// purpose - creeping at 5 deg/s or 6 mm/s makes the wheels stick and jerk,
+// which reads as the robot oscillating on the spot.
+const float TURN_RATE_MAX = 90.0f;
+const float TURN_ACCEL = 160.0f;
+const float TURN_RATE_MIN = 12.0f;
+const float TURN_KV = 0.35f;
+const float TURN_KP = 1.10f;
 const float TURN_KI = 0.18f;
 const float TURN_KD = 0.16f;
 const float TURN_I_LIMIT = 4.0f;
-const float TURN_OUT_LIMIT = 12.0f;
+// Must exceed KV * TURN_RATE_MAX or the feedforward alone saturates and the
+// feedback hunts against the clamp.
+const float TURN_OUT_LIMIT = 34.0f;
+// Inside this zone the motors coast instead of chasing the last degree
+// through the static-friction kick: kick, overshoot, reverse kick, repeat.
+const float TURN_COAST_ZONE_DEG = 1.5f;
 
-const float GRID_SPEED_MAX = 72.0f;
-const float COURSE_SPEED_MAX = 66.0f;
+const float GRID_SPEED_MAX = 100.0f;
+const float COURSE_SPEED_MAX = 85.0f;
 const float RAW_SPEED_MAX = 52.0f;
-const float DRIVE_ACCEL = 115.0f;
-const float DRIVE_SPEED_MIN = 6.0f;
-const float DRIVE_KV = 0.29f;
-const float DRIVE_KP = 0.42f;
+const float DRIVE_ACCEL = 120.0f;
+const float DRIVE_SPEED_MIN = 12.0f;
+const float DRIVE_KV = 0.36f;
+const float DRIVE_KP = 0.50f;
 const float DRIVE_KI = 0.10f;
 const float DRIVE_KD = 0.06f;
 const float DRIVE_I_LIMIT = 7.0f;
-const float DRIVE_OUT_LIMIT = 27.0f;
+const float DRIVE_OUT_LIMIT = 44.0f;
 
 const float HEADING_KP = 1.35f;
 const float HEADING_KI = 0.18f;
 const float HEADING_KD = 0.14f;
 const float HEADING_I_LIMIT = 5.0f;
-const float HEADING_OUT_LIMIT = 12.0f;
+const float HEADING_OUT_LIMIT = 14.0f;
 const float DRIVE_YAW_DEADBAND = 0.35f;
+// Only the short raw reverse moves still use the encoder tick balance. It is
+// kept out of the main heading loop, where it fought the gyro and wove.
 const float DRIVE_ENCODER_KP = 0.03f;
 const float DRIVE_ENCODER_MAX = 2.5f;
 const int DRIVE_CORRECTION_MAX = 10;
 const int COURSE_CORRECTION_MAX = 12;
 const int MOTOR_DEADBAND = 18;
-const int MOTOR_MAX = 60;
+// Once the wheels turn, friction is kinetic. Injecting the full static kick
+// while cruising makes the small-signal gain huge and the speed loop surge.
+const int MOTOR_DEADBAND_MOVING = 10;
+const int MOTOR_MAX = 90;
 const float DEADBAND_BLEND = 4.0f;
 const float DRIVE_SETTLE_RATE = 7.0f;
 const unsigned long SETTLE_TIMEOUT_MS = 1800UL;
@@ -364,6 +379,26 @@ float yaw() {
   return yawNow;
 }
 
+// Every D term reads this instead of differentiating the angle. Numerical
+// differencing over an irregular loop period was the main source of the
+// constant buzzing on this chassis.
+float gyroBias = 0.0f;
+
+float gyroRateDegPerSec() { return mpu.getGyroZ() - gyroBias; }
+
+// Averages raw rate samples while the robot is still. Never difference the
+// angle over a short window for this: angle noise becomes fake bias.
+void measureGyroBias() {
+  float total = 0.0f;
+  for (uint8_t i = 0; i < 32; ++i) {
+    mpu.update();
+    total += mpu.getGyroZ();
+    delay(5);
+  }
+  float average = total / 32.0f;
+  if (fabs(average) <= 2.5f) gyroBias = average;
+}
+
 void setMotor(uint8_t pwmPin, uint8_t dirPin, int command) {
   command = constrain(command, -255, 255);
   digitalWrite(dirPin, command >= 0 ? HIGH : LOW);
@@ -379,11 +414,21 @@ void stopMotors() {
   setWheels(0, 0);
 }
 
+int activeDeadband = MOTOR_DEADBAND;
+
+// Continuous blend between the static and kinetic deadband. Switching in
+// one step at a threshold injects a PWM square wave and roughens motion.
+void updateActiveDeadband(float magnitude) {
+  float blend = constrain(magnitude / 40.0f, 0.0f, 1.0f);
+  activeDeadband = MOTOR_DEADBAND
+                   - (int)((MOTOR_DEADBAND - MOTOR_DEADBAND_MOVING) * blend);
+}
+
 float withDeadband(float command) {
   float magnitude = fabs(command);
   if (magnitude < 0.35f) return 0.0f;
   float blend = min(1.0f, magnitude / DEADBAND_BLEND);
-  float output = min(MOTOR_DEADBAND * blend + magnitude, (float)MOTOR_MAX);
+  float output = min(activeDeadband * blend + magnitude, (float)MOTOR_MAX);
   return command > 0.0f ? output : -output;
 }
 
@@ -607,6 +652,7 @@ void beginSensors() {
   oled.drawLine(0, "KEEP STILL");
   delay(1000);
   mpu.calcOffsets(true, true);
+  measureGyroBias();
 
   startLidar(lidarLeft, LIDAR_LEFT_XSHUT, ADDR_LEFT);
   startLidar(lidarFront, LIDAR_FRONT_XSHUT, ADDR_FRONT);
@@ -651,9 +697,9 @@ bool turnTo(float targetYawDeg, const char *status) {
 
     currentYaw = yaw();
     float yawStep = normalizeAngle(currentYaw - lastYawValue);
-    lastYawValue = currentYaw;
     actual += yawStep * direction;
-    float yawRate = yawStep * direction / dt;
+    // Rate straight off the gyro, not differenced from the angle.
+    float yawRate = gyroRateDegPerSec() * direction;
     error = normalizeAngle(targetYawDeg - currentYaw);
 
     float rate = profileRate(setpoint, total, TURN_RATE_MAX,
@@ -662,13 +708,21 @@ bool turnTo(float targetYawDeg, const char *status) {
     if (!profileDone) setpoint = min(setpoint + rate * dt, total);
     else rate = 0.0f;
 
-    float command = turnTracker.update(setpoint - actual, rate, yawRate, dt)
-                    * direction;
-    float boost = stallUpdate(dt, STALL_BOOST_MAX_TURN);
-    if (fabs(command) >= 0.35f && boost > 0.0f) {
-      command += command > 0.0f ? boost : -boost;
+    float lag = setpoint - actual;
+    if (profileDone && fabs(lag) <= TURN_COAST_ZONE_DEG) {
+      // Coast. Chasing the last fraction of a degree through the static
+      // friction kick is what makes the robot buzz on the spot, and the
+      // course is full of small turns where that is most of the move.
+      stopMotors();
+    } else {
+      float command = turnTracker.update(lag, rate, yawRate, dt) * direction;
+      float boost = stallUpdate(dt, STALL_BOOST_MAX_TURN);
+      if (fabs(command) >= 0.35f && boost > 0.0f) {
+        command += command > 0.0f ? boost : -boost;
+      }
+      updateActiveDeadband(fabs(yawRate));
+      setControlledWheels(command, -command);
     }
-    setControlledWheels(command, -command);
 
     updateLidars();
     drawTelemetry(status, error, 0.0f);
@@ -729,7 +783,6 @@ bool driveRaw(float distanceMm, int direction, float yawTarget, const char *stat
   float setpoint = 0.0f;
   float lastDistance = 0.0f;
   float filteredSpeed = 0.0f;
-  float lastYawValue = yaw();
   unsigned long lastMs = millis();
   unsigned long startMs = lastMs;
   unsigned long stableSince = 0;
@@ -746,8 +799,7 @@ bool driveRaw(float distanceMm, int direction, float yawTarget, const char *stat
     float speed = (distance - lastDistance) / dt;
     lastDistance = distance;
     filteredSpeed += 0.25f * (speed - filteredSpeed);
-    float yawRate = normalizeAngle(currentYaw - lastYawValue) / dt;
-    lastYawValue = currentYaw;
+    float yawRate = gyroRateDegPerSec();
     float error = normalizeAngle(yawTarget - currentYaw);
 
     float rate = profileRate(setpoint, distanceMm, RAW_SPEED_MAX,
@@ -832,7 +884,6 @@ bool driveSegment(float targetMm, bool followWall) {
 
   float setpoint = constrain(max(0.0f, alongMm), 0.0f, targetMm);
   float filteredSpeed = 0.0f;
-  float lastYawValue = yaw();
   float lastAlongMm = alongMm;
   float segmentTrim = 0.0f;
   float wallReferenceMm = 0.0f;
@@ -957,7 +1008,6 @@ bool driveSegment(float targetMm, bool followWall) {
       setpoint = constrain(max(0.0f, alongMm), 0.0f, targetMm);
       filteredSpeed = 0.0f;
       trackedWall = 0;
-      lastYawValue = yaw();
       lastAlongMm = alongMm;
       lastControlMs = millis();
       stableSince = 0;
@@ -1020,17 +1070,26 @@ bool driveSegment(float targetMm, bool followWall) {
     float headingCommand = normalizeAngle(segmentYaw + lean);
 
     float error = normalizeAngle(headingCommand - currentYaw);
-    float yawRate = normalizeAngle(currentYaw - lastYawValue) / dt;
-    lastYawValue = currentYaw;
+    // Rate straight off the gyro, not differenced from the angle.
+    float yawRate = gyroRateDegPerSec();
     float yawPid = fabs(error) < DRIVE_YAW_DEADBAND ? 0.0f
       : headingTracker.update(error, 0.0f, yawRate, dt);
 
+    // The encoder tick-balance term is deliberately gone: it fought the gyro
+    // heading hold and the result was a slow weave down every segment.
     int correctionLimit = followWall ? DRIVE_CORRECTION_MAX : COURSE_CORRECTION_MAX;
-    float correction = constrain(yawPid + encoderCorrection(),
+    float correction = constrain(yawPid,
                                  -(float)correctionLimit,
                                  (float)correctionLimit);
 
+    // With forward at zero the per-wheel deadband turns any differential
+    // into a hard in-place twitch: the robot pivots, its heading is now
+    // wrong, and it drives into whatever is beside it. Correction is only
+    // allowed in proportion to the drive, so a pivot is impossible.
+    correction *= constrain(fabs(forwardCommand) / 8.0f, 0.0f, 1.0f);
+
     float forward = -forwardCommand;
+    updateActiveDeadband(fabs(filteredSpeed));
     setControlledWheels(forward + correction, forward - correction);
     drawTelemetry(followWall ? "GRID" : "COURSE", error, remaining);
 
