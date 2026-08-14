@@ -9,12 +9,23 @@ needed: no `pics` folder, no `run_notebook.cmd`, no custom kernel. Open it, run
 all, and it prints the `const char COMMANDS[] = "...";` line for
 `week12_4_1_2_maze_completion.ino`.
 
-It takes its photograph from the embedded sample, from a local file, or straight
-from a camera. Camera mode opens a preview window where `SPACE` takes the shot,
-`N` switches to the next camera so an external one can be selected, and `ESC`
-cancels; the frame is saved under `captures/` and recognised immediately.
+### Loading a photograph
 
-### Picking start and goal without a window
+Put the photograph in the same folder as the `.ipynb` and set `IMAGE_NAME` to
+its filename. No path, no `pics` folder. If that file is missing the notebook
+falls back to the embedded sample and lists the image files it can actually
+see, so a mistyped name is obvious rather than a bare exception.
+
+### Picking start and goal
+
+Running the selection cell opens a window showing the recognised maze. Drag
+inside a cell to set the start pose, with the drag direction giving the
+heading, then drag again for the goal; `N`/`E`/`S`/`W` after a click works too.
+Closing the window writes the selection back into `START` and `GOAL`, so the
+rest of the notebook just uses it. The cell blocks while the window is open,
+which is not a hang.
+
+### If the window does not appear
 
 Start and goal are set as variables, and the notebook draws the recognised maze
 with every cell labelled `row,column` (blocked corner cells in red) so reading

@@ -6,19 +6,32 @@
 stage of the pipeline is written into its own commented cell, so it does not
 import `continuous_planner.py` or `grid_wall_detector.py`, and the sample photo
 is embedded as base64. Sending that single `.ipynb` to someone else is enough:
-they open it, run all, and get a route. It takes its photo from the embedded
-sample, from a local file, or straight from a camera. The camera mode opens a
-preview window where `SPACE` takes the shot, `N` switches to the next camera so
-an external one can be selected, and `ESC` cancels; the captured frame is saved
-under `captures/` and recognised immediately.
+they open it, run all, and get a route.
 
-Start and goal are set as variables, and the notebook draws the maze with every
-cell labelled `row,column` (blocked corners red, the detected 5 x 5 course
-yellow) so the coordinates can be read straight off the picture. This is the
-main path because it needs no desktop window and works in any Jupyter frontend,
-local or remote.
+### Loading a photograph
 
-The click-and-drag window is still available as an optional cell, but it only
+Put the photograph in the same folder as the `.ipynb` and set `IMAGE_NAME` to
+its filename. No path, no `pics` folder. If that file is missing the notebook
+falls back to the embedded sample and lists the image files it can actually
+see, so a mistyped name is obvious rather than a bare exception.
+
+### Picking start and goal
+
+Running the selection cell opens a window showing the maze and the detected
+5 x 5 course. Drag inside a cell to set the start pose, with the drag direction
+giving the heading, then drag again for the goal; the route is solved and drawn
+as soon as both are set. The cell blocks while the window is open, which is not
+a hang.
+
+If the window cannot open, the notebook also draws the maze with every cell
+labelled `row,column` (blocked corners red, the detected course yellow), so the
+coordinates can be read straight off the picture and typed into `START` and
+`GOAL` in the parameter cell. That path needs no window and works in any
+Jupyter frontend, local or remote.
+
+### If the window does not appear
+
+The click-and-drag window only
 appears when a GUI build of `opencv-python` is installed rather than
 `opencv-python-headless`, Jupyter runs on the same machine as the display, and
 a display exists. If any one fails the window never appears and usually **does
