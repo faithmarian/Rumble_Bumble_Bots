@@ -12,9 +12,23 @@ preview window where `SPACE` takes the shot, `N` switches to the next camera so
 an external one can be selected, and `ESC` cancels; the captured frame is saved
 under `captures/` and recognised immediately.
 
+Start and goal are set as variables, and the notebook draws the maze with every
+cell labelled `row,column` (blocked corners red, the detected 5 x 5 course
+yellow) so the coordinates can be read straight off the picture. This is the
+main path because it needs no desktop window and works in any Jupyter frontend,
+local or remote.
+
+The click-and-drag window is still available as an optional cell, but it only
+appears when a GUI build of `opencv-python` is installed rather than
+`opencv-python-headless`, Jupyter runs on the same machine as the display, and
+a display exists. If any one fails the window never appears and usually **does
+not raise an error - it just looks like the cell has hung**. A self-contained
+cell diagnoses which of the three is missing and prints the fix.
+
 `Continuous_Planning_4_2.ipynb` is the original workflow, kept unchanged. It
 launches `continuous_planner.py` as a separate process with the interactive
-click-and-drag window. The rest of this document describes that pipeline, which
+click-and-drag window, so it needs that window to work and is **not** the one
+to hand to a teammate. The rest of this document describes that pipeline, which
 both notebooks share.
 
 Run `Continuous_Planning_4_2.ipynb` from top to bottom. The program rectifies

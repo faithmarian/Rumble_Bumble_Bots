@@ -14,10 +14,22 @@ from a camera. Camera mode opens a preview window where `SPACE` takes the shot,
 `N` switches to the next camera so an external one can be selected, and `ESC`
 cancels; the frame is saved under `captures/` and recognised immediately.
 
-Start and goal are set as variables, so the main path needs no desktop window
-and runs anywhere. The original click-and-drag window is still available as an
-optional cell at the end. Nothing is written to disk unless `SAVE_OUTPUT_DIR`
-is set.
+### Picking start and goal without a window
+
+Start and goal are set as variables, and the notebook draws the recognised maze
+with every cell labelled `row,column` (blocked corner cells in red) so reading
+the coordinates off the picture is easy. This is the main path because it needs
+no desktop window and works in any Jupyter frontend, local or remote.
+
+The original click-and-drag window is still there as an optional cell, but it
+only appears when three things are all true: a GUI build of `opencv-python` is
+installed rather than `opencv-python-headless`, Jupyter is running on the same
+machine as the display, and a display exists. If any one fails the window never
+appears and usually **does not raise an error - it just looks like the cell has
+hung**, which is why it is no longer the main path. A self-contained cell
+diagnoses which of the three is missing and prints the fix.
+
+Nothing is written to disk unless `SAVE_OUTPUT_DIR` is set.
 
 Only `numpy`, `opencv-python` and `matplotlib` are required.
 
