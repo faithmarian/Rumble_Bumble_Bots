@@ -38,6 +38,10 @@ a display exists. If any one fails the window never appears and usually **does
 not raise an error - it just looks like the cell has hung**. A self-contained
 cell diagnoses which of the three is missing and prints the fix.
 
+The all-in-one notebook is written entirely in English and only ever prints
+the command line for you to copy. It does not open the serial port or send
+anything to the robot.
+
 `Continuous_Planning_4_2.ipynb` is the original workflow, kept unchanged. It
 launches `continuous_planner.py` as a separate process with the interactive
 click-and-drag window, so it needs that window to work and is **not** the one
